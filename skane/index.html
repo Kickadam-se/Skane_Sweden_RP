@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ansökningar</title>
+  <style>
+    body {
+      background-color: #001f3f; /* mörkblå */
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 60px;
+      height: auto;
+    }
+
+    .main-button {
+      background-color: #3399ff; /* ljusblå */
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+
+    .buttons-container {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 800px;
+    }
+
+    .sub-button {
+      background-color: #66ccff; /* ljusblå */
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      color: black;
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #3399ff;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .floating-button img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logotyp -->
+  <img src="skane.png" alt="Logotyp" class="logo">
+
+  <!-- Huvudknapp -->
+  <button class="main-button" onclick="toggleButtons()">Ansökningar</button>
+
+  <!-- Knappcontainer -->
+  <div class="buttons-container" id="buttonsContainer">
+    <!-- Exempel på namn + länkar (lägg till upp till 16 st) -->
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeFGYEbFVoeMXxlLjWp4hRqkFa-9jgddfaG6PaoFJllmd-j5A/viewform?usp=header', '_blank')">Polis</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf3jAOaGtj0em14dnIbxjhY1pFmgbB9GjCTE1hcFkF0YxZMhg/viewform?usp=header', '_blank')">Securitas</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScn2uDYBPiH6nij6Hbk3qlmYV-wV7ZiUS0noQY62eYo_RQOvQ/viewform?usp=header', '_blank')">Kriminalvården</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScQF3CthlLUXvgnDch1G-9MWAMrR0r74OT66x9cdYpquuVdqg/viewform?usp=header', '_blank')">Tullverket</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeNQs6wKX7gUko5dGwbA2C941oMKvN2tLICaNCMD_wynkZDDA/viewform?usp=header', '_blank')">Säkerhetspolisen</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdlFNzjgLtp6Kno4id0IZpSFcyqwjVwSwg5jruY5XtnWrUWVw/viewform?usp=header', '_blank')">Räddningstjänsten</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSc1_lJjjQSkDyiM0ukm9C-Hc8rtrdB-N8ijP0elpFQRWv4IRg/viewform?usp=header', '_blank')">Ambulans</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfTnkf4udUi17hnkNcegmPOJ6HDKOtyxeUvJBhLVyqApCIo3g/viewform?usp=header', '_blank')">Sjukhus</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf6Of0gquFxTNY16H2XwN38FiNML2V3jyvTKgueKi0k8pTIMw/viewform?usp=header', '_blank')">Larmoperatör</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeXsCNIKb5gFc_8WJE2v8M73bCbX12JPX7ZXFUQE_kw1deO3Q/viewform?usp=header', '_blank')">Assistancekåren</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSchP6bpveGsokN78Pte6oLUiFFkg5te0PaGjwNSFwKygA6x1A/viewform?usp=header', '_blank')">Vapenlicens</button>
+    <button class="sub-button" onclick="window.open(' https://docs.google.com/forms/d/e/1FAIpQLSfGalwg-d1q-GtZMKxl10qWhJtfM8_jd6JcG_Tf1WK7_yH0Og/viewform?usp=header', '_blank')">Kollektivtrafik</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeHlPoc1t6W6ucUlKgDCf7erPH8N7iKAsnmAMGGkMOVp9ov7g/viewform?usp=header', '_blank')">Gäng</button>
+    <button class="sub-button" onclick="window.open('https://forms.gle/vibesdMaZs5mh77G6', '_blank')">Staff</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfhY-Blv4M-cDZrIHYrOi_xn6f43xEE4X-Sx_ex53nUd6BQzQ/viewform?usp=header', '_blank')">Discord mod ansökan</button>
+    <button class="sub-button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSe53E4QJYQfrcrnJCJ8oa5FDpjwTPQ4vQYRlrWeZps6eUFqUw/viewform?usp=header', '_blank')">Företag</button>
+
+    <!-- Lägg till fler här -->
+  </div>
+
+  <!-- Rund knapp i hörnet -->
+  <button class="floating-button" onclick="window.open('https://discord.gg/q46tHQzDFF', '_blank')">
+    <img src="OIP.jpg" alt="Flytande knapp">
+  </button>
+
+  <script>
+    function toggleButtons() {
+      const container = document.getElementById("buttonsContainer");
+      container.style.display = container.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Om oss</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #000000e8;
+    }
+
+    #om-oss-text {
+      display: none;
+      text-align: center;
+      font-size: 24px;
+      max-width: 600px;
+    }
+
+    #om-oss-knapp {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #007BFF;
+      color: rgb(255, 0, 0);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #om-oss-knapp:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="om-oss-knapp" onclick="visaOmOss(event)">Om oss</button>
+
+  <div id="om-oss-text">
+    <h1>Om oss</h1>
+    <p>Vi är en svensk server med aktiva spelare!
+
+Vad erbjuder vi 
+💎  Support: Tillgänglig support för spelare med frågor eller som behöver hjälp
+
+💎 RP: Bra rp
+
+💎 Rollspel: Massa olika yrken för alla
+
+💎 Liverys: Massa olika realistiska liverys 
+
+💎 Staff: Bra staff personal
+
+💎Bemötande: Trevligt ledning Trevliga medlemmar 
+
+Så tveka inte joina Skåne_RP Idag!
+</p>
+  </div>
+
+  <script>
+    function visaOmOss(event) {
+      event.stopPropagation(); // Förhindrar att klicket bubblar upp
+      document.getElementById("om-oss-knapp").style.display = "none";
+      document.getElementById("om-oss-text").style.display = "block";
+    }
+
+    // Klick var som helst utanför texten → återställ
+    document.addEventListener("click", function () {
+      document.getElementById("om-oss-knapp").style.display = "block";
+      document.getElementById("om-oss-text").style.display = "none";
+    });
+
+    // Förhindra att klick inuti texten också stänger den
+    document.getElementById("om-oss-text").addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+  </script>
+
+</body>
+</html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Teamspeak</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+
+    .innehall {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .teamspeak-knapp {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .teamspeak-knapp:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="innehall">
+    <!-- Här kan du lägga andra knappar eller innehåll -->
+    <h1>Välkommen</h1>
+  </div>
+
+  <!-- Teamspeak-knappen -->
+  <button class="teamspeak-knapp" onclick="oppnaTeamspeak()">Teamspeak</button>
+
+  <script>
+    function oppnaTeamspeak() {
+      // Ersätt denna länk med din riktiga Teamspeak-länk
+      window.location.href = "https://discord.gg/F4BRs8G3tN";
+    }
+  </script>
+
+</body>
+</html>
